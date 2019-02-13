@@ -62,291 +62,291 @@ public class Main {
 	
 	////////////////////////////////////////////////////////
 
-	Random generator = new Random();
-	private int rand() {
+	static Random generator = new Random();
+	static private int rand() {
 		return generator.nextInt();
 	}
 
-	final	int	NORMAL		=	0;
-	final	int	PRESS		=	1;
+	static final	int	NORMAL		=	0;
+	static final	int	PRESS		=	1;
 
-	final	int	GAMETITLE	=	0;
-	final	int	MODESELECT	=	1;
-	final	int	SELECTSONG	=	2;
-	final	int	STAGE1		=	3;
-	final	int	DOUBLE		=	4;
-	final	int	COUPLE		=	5;
-	final	int	DEAD		=	6;
-	final	int	CONFIG		=	7;
-	final	int	RESULT		=	8;
-	final	int	GAMEOVER	=	9;
+	static final	int	GAMETITLE	=	0;
+	static final	int	MODESELECT	=	1;
+	static final	int	SELECTSONG	=	2;
+	static final	int	STAGE1		=	3;
+	static final	int	DOUBLE		=	4;
+	static final	int	COUPLE		=	5;
+	static final	int	DEAD		=	6;
+	static final	int	CONFIG		=	7;
+	static final	int	RESULT		=	8;
+	static final	int	GAMEOVER	=	9;
 
-	final	int	MODE_EASY	=	0;
-	final	int	MODE_HARD	=	1;
-	final	int	MODE_DOUBLE	=	2;
-	final	int	MODE_CRAZY	=	3;
-	final	int	MODE_REMIX	=	4;
+	static final	int	MODE_EASY	=	0;
+	static final	int	MODE_HARD	=	1;
+	static final	int	MODE_DOUBLE	=	2;
+	static final	int	MODE_CRAZY	=	3;
+	static final	int	MODE_REMIX	=	4;
 
-	final	int	END			=	99;
+	static final	int	END			=	99;
 
-	final	int	MAX_DATA	=	2048;
+	static final	int	MAX_DATA	=	2048;
 
-	final	int	NONE		=	0;
-	final	int	PERFECT		=	1;
-	final	int	GREAT		=	2;
-	final	int	GOOD		=	3;
-	final	int	BAD			=	4;
-	final	int	MISS		=	5;
+	static final	int	NONE		=	0;
+	static final	int	PERFECT		=	1;
+	static final	int	GREAT		=	2;
+	static final	int	GOOD		=	3;
+	static final	int	BAD			=	4;
+	static final	int	MISS		=	5;
 
-	final	int	ARROW_X		=	50;
+	static final	int	ARROW_X		=	50;
 
-	final	int	PUMP_SPRITE	=	50;
-	final	int	PUMP_SPRITE_Y	=	55;
-	final	int	PUMP_SPRITE_NEW	=	60;
+	static final	int	PUMP_SPRITE	=	50;
+	static final	int	PUMP_SPRITE_Y	=	55;
+	static final	int	PUMP_SPRITE_NEW	=	60;
 
-	final	int	LP1_X		=	30;
-	final	int	LP7_X		=	30+PUMP_SPRITE;
-	final	int	LP5_X		=	32+PUMP_SPRITE*2;
-	final	int	LP9_X		=	35+PUMP_SPRITE*3;
-	final	int	LP3_X		=	35+PUMP_SPRITE*4;
+	static final	int	LP1_X		=	30;
+	static final	int	LP7_X		=	30+PUMP_SPRITE;
+	static final	int	LP5_X		=	32+PUMP_SPRITE*2;
+	static final	int	LP9_X		=	35+PUMP_SPRITE*3;
+	static final	int	LP3_X		=	35+PUMP_SPRITE*4;
 
-	final	int	LP1_X1		=	350;
-	final	int	LP7_X1		=	350+PUMP_SPRITE;
-	final	int	LP5_X1		=	352+PUMP_SPRITE*2;
-	final	int	LP9_X1		=	355+PUMP_SPRITE*3;
-	final	int	LP3_X1		=	355+PUMP_SPRITE*4;
-	final	int	JUDGE_SIZE_X	=	250;
-	final	int	JUDGE_SIZE_Y	=	50;
+	static final	int	LP1_X1		=	350;
+	static final	int	LP7_X1		=	350+PUMP_SPRITE;
+	static final	int	LP5_X1		=	352+PUMP_SPRITE*2;
+	static final	int	LP9_X1		=	355+PUMP_SPRITE*3;
+	static final	int	LP3_X1		=	355+PUMP_SPRITE*4;
+	static final	int	JUDGE_SIZE_X	=	250;
+	static final	int	JUDGE_SIZE_Y	=	50;
 
-	final	String	VER_NUM	= "0.4b";	
-	final	String	PRGNAME = "Kick It UP!";
+	static final	String	VER_NUM	= "0.4b";	
+	static final	String	PRGNAME = "Kick It UP!";
 	
-	final	int	MAX_PATH = 255;
+	static final	int	MAX_PATH = 255;
 	
-	String	TITLE;
+	static private String	TITLE;
 	
 	
 	// 일반 하드 데이터 부분
-	char [][] 			Data	= new char[MAX_DATA+1][14];
-	char [][]			Data_Judge	= new char[MAX_DATA+1][14];
-	double []			Data_y = new double[MAX_DATA+1];
+	static private char [][] 			Data	= new char[MAX_DATA+1][14];
+	static private char [][]			Data_Judge	= new char[MAX_DATA+1][14];
+	static private double []			Data_y = new double[MAX_DATA+1];
 
-	char [][]			Data1	= new char[MAX_DATA+1][14];
-	char [][]			Data_Judge1	= new char[MAX_DATA+1][14];
-	double []			Data_y1 = new double[MAX_DATA+1];
+	static private char [][]			Data1	= new char[MAX_DATA+1][14];
+	static private char [][]			Data_Judge1	= new char[MAX_DATA+1][14];
+	static private double []			Data_y1 = new double[MAX_DATA+1];
 	// 여기까지
 
 	// 더블 데이터 시작
-	char [][]			Data_Double	= new char[MAX_DATA+1][14];
-	char [][]			Data_Double_Judge	= new char[MAX_DATA+1][14];
-	double []			Data_Double_y = new double[MAX_DATA+1];//족보 데이터의 Y값을 가지고 있는 배열
+	static private char [][]			Data_Double	= new char[MAX_DATA+1][14];
+	static private char [][]			Data_Double_Judge	= new char[MAX_DATA+1][14];
+	static private double []			Data_Double_y = new double[MAX_DATA+1];//족보 데이터의 Y값을 가지고 있는 배열
 	// 더블 데이터 끝
 
 
-	char []				SongName	= new char[MAX_PATH+1];
-	char []				SongName2	= new char[MAX_PATH+1];
-	char []				SongName3	= new char[MAX_PATH+1];
+	static private char []				SongName	= new char[MAX_PATH+1];
+	static private char []				SongName2	= new char[MAX_PATH+1];
+	static private char []				SongName3	= new char[MAX_PATH+1];
 
-	char []				LogoTitleName	= new char[MAX_PATH];
+	static private char []				LogoTitleName	= new char[MAX_PATH];
 
-	double				bpm;
-	double				bpm2;
-	double				bpm3;
+	static private double				bpm;
+	static private double				bpm2;
+	static private double				bpm3;
 
-	int					start,start2,start3;
-	long				bunki,bunki2;
+	static private int					start,start2,start3;
+	static private long				bunki,bunki2;
 
-	int					tick;
+	static private int					tick;
 
-	char []				Title	= new char[MAX_PATH+1];
+	static private char []				Title	= new char[MAX_PATH+1];
 
-	int					g_ProgramState=GAMETITLE;
-	char []				ArrowState1p	= new char[10];
-	char []				ArrowState2p	= new char[10];
+	static private int					g_ProgramState=GAMETITLE;
+	static private char []				ArrowState1p	= new char[10];
+	static private char []				ArrowState2p	= new char[10];
 
-	char []				ArrowState_Joy	= new char[10];
+	static private char []				ArrowState_Joy	= new char[10];
 
-	long []				PressedKey1p = new long[10];
-	long []				PressedKey2p = new long[10];
-	long []				PressedKey_Joy = new long[10];
+	static private long []				PressedKey1p = new long[10];
+	static private long []				PressedKey2p = new long[10];
+	static private long []				PressedKey_Joy = new long[10];
 
-	char				Judgement1p;
-	char				Judgement2p;
-	long				Combo1p;
-	long				Combo2p;
-	long				dwState;
-	long				dwState2;
-	boolean				g_bActive;
+	static private char				Judgement1p;
+	static private char				Judgement2p;
+	static private long				Combo1p;
+	static private long				Combo2p;
+	static private long				dwState;
+	static private long				dwState2;
+	static private boolean				g_bActive;
 
-	long				Score1p;
-	long				Score2p;
+	static private long				Score1p;
+	static private long				Score2p;
 
-	int					Gauge1p=10;
-	int					Gauge2p=10;
+	static private int					Gauge1p=10;
+	static private int					Gauge2p=10;
 
-	char				GameMode=MODE_HARD;
+	static private char				GameMode=MODE_HARD;
 
-	boolean				Couple=false;
-	boolean				Double=false;
+	static private boolean				Couple=false;
+	static private boolean				Double=false;
 
-	char				First;
-	int 				start1;
+	static private char				First;
+	static private int 				start1;
 
-	boolean				Start1p;
-	boolean				Start2p;
+	static private boolean				Start1p;
+	static private boolean				Start2p;
 
-	HWND hWnd;
-	HINSTANCE	g_hInst;
+	static private HWND hWnd;
+	static private HINSTANCE	g_hInst;
 
-	LPDIRECTDRAW g_pDD                = null;
-	LPDIRECTDRAWSURFACE	g_pDDSPrimary = null;
-	LPDIRECTDRAWSURFACE g_pDDSBack    = null;
+	static private LPDIRECTDRAW g_pDD                = null;
+	static private LPDIRECTDRAWSURFACE	g_pDDSPrimary = null;
+	static public	LPDIRECTDRAWSURFACE g_pDDSBack    = null;
 
-	LPDIRECTDRAWSURFACE	GameTITLE		= null;
-	LPDIRECTDRAWSURFACE	Background		= null;
-	LPDIRECTDRAWSURFACE	SongTitle 		= null;
-	LPDIRECTDRAWSURFACE	SongBack 		= null;
-	LPDIRECTDRAWSURFACE	SelectBack		= null;
-	LPDIRECTDRAWSURFACE	JudgeFont		= null;
-	LPDIRECTDRAWSURFACE	NumberFont		= null;
-	LPDIRECTDRAWSURFACE	ComboFont		= null;
-	LPDIRECTDRAWSURFACE NoDISC			= null;
-	LPDIRECTDRAWSURFACE	ShiftLeft		= null;
-	LPDIRECTDRAWSURFACE	ShiftRight		= null;
-	LPDIRECTDRAWSURFACE	GaugeWaku		= null;
-	LPDIRECTDRAWSURFACE Gauge			= null;
-	LPDIRECTDRAWSURFACE Score			= null;
-	LPDIRECTDRAWSURFACE DeadScreen		= null;
-	LPDIRECTDRAWSURFACE GameOver		= null;
-	LPDIRECTDRAWSURFACE Logo			= null;
-	LPDIRECTDRAWSURFACE	Diff			= null;
-	LPDIRECTDRAWSURFACE	DoubleIcon		= null;
-	LPDIRECTDRAWSURFACE	CrazyIcon		= null;
-	LPDIRECTDRAWSURFACE	EasyIcon		= null;
-	LPDIRECTDRAWSURFACE	HardIcon		= null;
+	static private LPDIRECTDRAWSURFACE	GameTITLE		= null;
+	static private LPDIRECTDRAWSURFACE	Background		= null;
+	static private LPDIRECTDRAWSURFACE	SongTitle 		= null;
+	static private LPDIRECTDRAWSURFACE	SongBack 		= null;
+	static private LPDIRECTDRAWSURFACE	SelectBack		= null;
+	static private LPDIRECTDRAWSURFACE	JudgeFont		= null;
+	static private LPDIRECTDRAWSURFACE	NumberFont		= null;
+	static private LPDIRECTDRAWSURFACE	ComboFont		= null;
+	static private LPDIRECTDRAWSURFACE NoDISC			= null;
+	static private LPDIRECTDRAWSURFACE	ShiftLeft		= null;
+	static private LPDIRECTDRAWSURFACE	ShiftRight		= null;
+	static private LPDIRECTDRAWSURFACE	GaugeWaku		= null;
+	static private LPDIRECTDRAWSURFACE Gauge			= null;
+	static private LPDIRECTDRAWSURFACE Score			= null;
+	static private LPDIRECTDRAWSURFACE DeadScreen		= null;
+	static private LPDIRECTDRAWSURFACE GameOver		= null;
+	static private LPDIRECTDRAWSURFACE Logo			= null;
+	static private LPDIRECTDRAWSURFACE	Diff			= null;
+	static private LPDIRECTDRAWSURFACE	DoubleIcon		= null;
+	static private LPDIRECTDRAWSURFACE	CrazyIcon		= null;
+	static private LPDIRECTDRAWSURFACE	EasyIcon		= null;
+	static private LPDIRECTDRAWSURFACE	HardIcon		= null;
 
-	LPDIRECTDRAWSURFACE	SmallFont		= null;
-	LPDIRECTDRAWSURFACE	Arrow1			= null;
-	LPDIRECTDRAWSURFACE	Arrow2			= null;
-	LPDIRECTDRAWSURFACE	wArrow			= null;
+	static private LPDIRECTDRAWSURFACE	SmallFont		= null;
+	static private LPDIRECTDRAWSURFACE	Arrow1			= null;
+	static private LPDIRECTDRAWSURFACE	Arrow2			= null;
+	static private LPDIRECTDRAWSURFACE	wArrow			= null;
 
-	LPDIRECTDRAWSURFACE	pArrow1			= null;
-	LPDIRECTDRAWSURFACE	pArrow3			= null;
-	LPDIRECTDRAWSURFACE	pArrow5			= null;
-	LPDIRECTDRAWSURFACE	pArrow7			= null;
-	LPDIRECTDRAWSURFACE	pArrow9			= null;
+	static private LPDIRECTDRAWSURFACE	pArrow1			= null;
+	static private LPDIRECTDRAWSURFACE	pArrow3			= null;
+	static private LPDIRECTDRAWSURFACE	pArrow5			= null;
+	static private LPDIRECTDRAWSURFACE	pArrow7			= null;
+	static private LPDIRECTDRAWSURFACE	pArrow9			= null;
 
-	LPDIRECTDRAWSURFACE	cArrow1			= null;
-	LPDIRECTDRAWSURFACE	cArrow3			= null;
-	LPDIRECTDRAWSURFACE	cArrow5			= null;
-	LPDIRECTDRAWSURFACE	cArrow7			= null;
-	LPDIRECTDRAWSURFACE	cArrow9			= null;
+	static private LPDIRECTDRAWSURFACE	cArrow1			= null;
+	static private LPDIRECTDRAWSURFACE	cArrow3			= null;
+	static private LPDIRECTDRAWSURFACE	cArrow5			= null;
+	static private LPDIRECTDRAWSURFACE	cArrow7			= null;
+	static private LPDIRECTDRAWSURFACE	cArrow9			= null;
 
-	LPDIRECTDRAWSURFACE	ModeIcon		= null;
-	LPDIRECTDRAWSURFACE	g_cFont			= null;
+	static private LPDIRECTDRAWSURFACE	ModeIcon		= null;
+	static private LPDIRECTDRAWSURFACE	g_cFont			= null;
 
-	LPDIRECTDRAWSURFACE	ResultFont		= null;
-	LPDIRECTDRAWSURFACE	ResultBack		= null;
-	LPDIRECTDRAWSURFACE	StageCount		= null;
+	static private LPDIRECTDRAWSURFACE	ResultFont		= null;
+	static private LPDIRECTDRAWSURFACE	ResultBack		= null;
+	static private LPDIRECTDRAWSURFACE	StageCount		= null;
 
-	LPDIRECTSOUND		lpds			= null;
-	LPDIRECTSOUNDBUFFER	lpdsbd			= null;
+	static private LPDIRECTSOUND		lpds			= null;
+	static private LPDIRECTSOUNDBUFFER	lpdsbd			= null;
 
-	LPDIRECTSOUNDBUFFER				g_dsOpening	= null;
-	LPDIRECTSOUNDBUFFER				g_dsDead		= null;
-	LPDIRECTSOUNDBUFFER				g_dsMode		= null;
-	LPDIRECTSOUNDBUFFER				g_dsCancel		= null;
-	LPDIRECTSOUNDBUFFER				g_dsMove		= null;
-	LPDIRECTSOUNDBUFFER				g_dsBeat		= null;
-	LPDIRECTSOUNDBUFFER				g_dsSelectSong	= null;
+	static private LPDIRECTSOUNDBUFFER				g_dsOpening	= null;
+	static private LPDIRECTSOUNDBUFFER				g_dsDead		= null;
+	static private LPDIRECTSOUNDBUFFER				g_dsMode		= null;
+	static private LPDIRECTSOUNDBUFFER				g_dsCancel		= null;
+	static private LPDIRECTSOUNDBUFFER				g_dsMove		= null;
+	static private LPDIRECTSOUNDBUFFER				g_dsBeat		= null;
+	static private LPDIRECTSOUNDBUFFER				g_dsSelectSong	= null;
 
-	SONG []				CSONG = new SONG[512];
+	static private SONG []				CSONG = new SONG[512];
 
-	boolean	SongFlag;
-	boolean	IntroFlag;
+	static private boolean	SongFlag;
+	static private boolean	IntroFlag;
 
-	int		HighSpeed1p=1;
-	int		HighSpeed2p=1;
+	static private int		HighSpeed1p=1;
+	static private int		HighSpeed2p=1;
 
-	int		HighSpeed1p_1;
-	int		HighSpeed1p_3;
-	int		HighSpeed1p_5;
-	int		HighSpeed1p_7;
-	int		HighSpeed1p_9;
+	static private int		HighSpeed1p_1;
+	static private int		HighSpeed1p_3;
+	static private int		HighSpeed1p_5;
+	static private int		HighSpeed1p_7;
+	static private int		HighSpeed1p_9;
 
-	int		HighSpeed2p_1;
-	int		HighSpeed2p_3;
-	int		HighSpeed2p_5;
-	int		HighSpeed2p_7;
-	int		HighSpeed2p_9;
+	static private int		HighSpeed2p_1;
+	static private int		HighSpeed2p_3;
+	static private int		HighSpeed2p_5;
+	static private int		HighSpeed2p_7;
+	static private int		HighSpeed2p_9;
 
-	int		MaxSpeed;
-	int		MinSpeed;
+	static private int		MaxSpeed;
+	static private int		MinSpeed;
 
-	int[] 	JudgeArray = new int[110];
+	static private int[] 	JudgeArray = new int[110];
 
-	boolean	bModeMirror1p;
-	boolean	bModeNonstep1p;
-	boolean	bModeSynchro;
-	boolean	bModeUnion1p;
-	boolean	bModeRandom1p;
-	boolean	b4dMix1p;			// 1p 4DMIX mode.
-	boolean	bModeVanish1p;
-	boolean	bModeCrazy1p;
-	boolean	bModeSuddenR1p;
-	boolean	bModeRandomS1p;
+	static private boolean	bModeMirror1p;
+	static private boolean	bModeNonstep1p;
+	static private boolean	bModeSynchro;
+	static private boolean	bModeUnion1p;
+	static private boolean	bModeRandom1p;
+	static private boolean	b4dMix1p;			// 1p 4DMIX mode.
+	static private boolean	bModeVanish1p;
+	static private boolean	bModeCrazy1p;
+	static private boolean	bModeSuddenR1p;
+	static private boolean	bModeRandomS1p;
 
-	boolean	bModeMirror2p;
-	boolean	bModeNonstep2p;
-	boolean	bModeUnion2p;
-	boolean	bModeRandom2p;
-	boolean	b4dMix2p;
-	boolean	bModeVanish2p;
-	boolean	bModeCrazy2p;
-	boolean	bModeSuddenR2p;
-	boolean	bModeRandomS2p;
+	static private boolean	bModeMirror2p;
+	static private boolean	bModeNonstep2p;
+	static private boolean	bModeUnion2p;
+	static private boolean	bModeRandom2p;
+	static private boolean	b4dMix2p;
+	static private boolean	bModeVanish2p;
+	static private boolean	bModeCrazy2p;
+	static private boolean	bModeSuddenR2p;
+	static private boolean	bModeRandomS2p;
 
-	int	ALPHA=0;
-	int	inc=20;
-	long	CKey_CFont;
-	long	CKey_Arr;
+	static private int	ALPHA=0;
+	static private int	inc=20;
+	static private long	CKey_CFont;
+	static private long	CKey_Arr;
 
-	long	cPerfect1p;
-	long	cGreat1p;
-	long	cGood1p;
-	long	cBad1p;
-	long	cMiss1p;
-	long	cMaxCombo1p;
+	static private long	cPerfect1p;
+	static private long	cGreat1p;
+	static private long	cGood1p;
+	static private long	cBad1p;
+	static private long	cMiss1p;
+	static private long	cMaxCombo1p;
 
-	long	cPerfect2p;
-	long	cGreat2p;
-	long	cGood2p;
-	long	cBad2p;
-	long	cMiss2p;
-	long	cMaxCombo2p;
+	static private long	cPerfect2p;
+	static private long	cGreat2p;
+	static private long	cGood2p;
+	static private long	cBad2p;
+	static private long	cMiss2p;
+	static private long	cMaxCombo2p;
 
 	// Data of configuration
-	KIUCONFIG	KCFG;
+	static private KIUCONFIG	KCFG;
 
-	long		dwGameCount;
+	static private long		dwGameCount;
 
-	boolean debugflag=true;
-	char [] g_szDebugName = new char[MAX_PATH];
+	static private boolean debugflag=true;
+	static private char [] g_szDebugName = new char[MAX_PATH];
 
-	boolean	g_fullscreen=false;
+	static private boolean	g_fullscreen=false;
 
-	CMedia intro;
-	CMedia song;
+	static private CMedia intro;
+	static private CMedia song;
 
-	RECT                    g_rcViewport;           // Pos. & size to blt from
-	RECT                    g_rcScreen;             // Screen pos. for blt
+	static private RECT                    g_rcViewport;           // Pos. & size to blt from
+	static private RECT                    g_rcScreen;             // Screen pos. for blt
 	
 	
-	void	DebugPrintf(String fmt, Object... args) {
+	static private void	DebugPrintf(String fmt, Object... args) {
 		Gdx.app.log("", String.format(fmt, args));		
 	}
 
-	void	JudgementSet()	{
+	static private void	JudgementSet()	{
 		int i;
 
 		for(i=50;i<110;i++) JudgeArray[i] = BAD;
@@ -355,7 +355,7 @@ public class Main {
 		for(i=73;i<88;i++)	JudgeArray[i] = PERFECT;
 	}
 	
-	void	DisplayStageCount(long Count) {
+	static private void	DisplayStageCount(long Count) {
 		RECT	sssRect = new RECT();
 		
 		sssRect.top=0;
@@ -367,7 +367,7 @@ public class Main {
 	}
 	
 	
-	void ClearMode() {
+	static private void ClearMode() {
 			HighSpeed1p=1;
 			bModeMirror1p=false;
 			bModeNonstep1p=false;
@@ -402,8 +402,8 @@ public class Main {
 	}
 	
 	
-	private int GameOver1_count = 0;
-	void	GameOver1()	{
+	static private int GameOver1_count = 0;
+	static private void	GameOver1()	{
 		if(First==0) {
 			GameOver1_count=0;
 			First++;
@@ -418,11 +418,11 @@ public class Main {
 	}
 	
 	// void DrawBackground(char[][14] Data, long i, int temp)
-	void DrawBackground(char[][] Data, long i, int temp)	{
+	static private void DrawBackground(char[][] Data, long i, int temp)	{
 		g_pDDSBack.BltFast(0,0,SongBack,null, DDBLTFAST_WAIT | DDBLTFAST_NOCOLORKEY);
 	}
 	
-	void DrawScore1p() {
+	static private void DrawScore1p() {
 		RECT	cRect = new RECT();
 		int Loop;
 
@@ -439,7 +439,7 @@ public class Main {
 		}/* 여기까지 */
 	}
 	
-	void DrawScore2p()	{
+	static private void DrawScore2p()	{
 		RECT	cRect = new RECT();
 		int Loop;
 
@@ -456,7 +456,7 @@ public class Main {
 		}/* 여기까지 */
 	}
 	
-	void DrawGauge1p() {
+	static private void DrawGauge1p() {
 		int CurG;
 		int i;
 //		static	int	Phase;
@@ -509,7 +509,7 @@ public class Main {
 		}
 	}
 	
-	void DrawGauge2p() {
+	static private void DrawGauge2p() {
 		int CurG;
 		int i;
 		RECT sRect = new RECT();
@@ -562,7 +562,7 @@ public class Main {
 		}
 	}
 	
-	void WaveSet_Loading() {
+	static private void WaveSet_Loading() {
 		g_dsOpening=DSLoadSoundBuffer(lpds, "wave\\Opening.wav");
 		g_dsDead=DSLoadSoundBuffer(lpds,"wave\\Dead.wav");
 		g_dsMode=DSLoadSoundBuffer(lpds,"wave\\Mode.wav");
@@ -572,7 +572,7 @@ public class Main {
 		g_dsSelectSong=DSLoadSoundBuffer(lpds, "wave\\MusicSelect.wav");
 	}
 	
-	void DisplayMessage(int x, int y, String msg) {
+	static private void DisplayMessage(int x, int y, String msg) {
 		final int FONT_SIZE	= 8;
 		final int FONT_HEIGHT = 16;
 
@@ -596,8 +596,8 @@ public class Main {
 	}
 	
 	// static RECT sRect = new RECT();
-	static RECT ClpBlt_sRect;
-	HRESULT	ClpBlt(int x ,int y ,LPDIRECTDRAWSURFACE ds,RECT srect,int mode){
+	static private RECT ClpBlt_sRect;
+	static private HRESULT	ClpBlt(int x ,int y ,LPDIRECTDRAWSURFACE ds,RECT srect,int mode){
 		HRESULT	hRet = HRESULT.DD_OK;
 		ClpBlt_sRect = new RECT(srect);
 		
@@ -701,7 +701,7 @@ public class Main {
 		return hRet;
 	}
 
-	void StageTitle() {
+	static private void StageTitle() {
 		RECT	lRect = new RECT();
 		if(First==0) {
 			ClearMode();
@@ -798,9 +798,9 @@ public class Main {
 
 	
 	// DrawJudge1p
-	private	char DrawJudge1p_LastJudge;
-	private	long DrawJudge1p_sec,DrawJudge1p_delta;
-	void DrawJudge1p()
+	static private char DrawJudge1p_LastJudge;
+	static private long DrawJudge1p_sec,DrawJudge1p_delta;
+	static private void DrawJudge1p()
 	{
 		/*
 		 * 	static long cur, last;
@@ -929,9 +929,9 @@ public class Main {
 		Judgement1p=NONE;
 	}
 
-	private	char DrawJudge2p_LastJudge;
-	private	long DrawJudge2p_sec,DrawJudge2p_delta;
-	void DrawJudge2p() {
+	static private char DrawJudge2p_LastJudge;
+	static private long DrawJudge2p_sec,DrawJudge2p_delta;
+	static private void DrawJudge2p() {
 		//		static long cur, last;
 		//		static char LastJudge;
 		//		static long sec,delta;
@@ -1061,22 +1061,22 @@ public class Main {
 
 	
 	
-	private int [] DrawArrow1p_arrow_l = new int[]{0,0,72,72,144,144,216,216,288,288,360,360,432,432,504,504,576,576,648,648};
-	private int [] DrawArrow1p_arrow_r = new int[]{72,72,144,144,216,216,288,288,360,360,432,432,504,504,576,576,648,648,720,720};
+	static private int [] DrawArrow1p_arrow_l = new int[]{0,0,72,72,144,144,216,216,288,288,360,360,432,432,504,504,576,576,648,648};
+	static private int [] DrawArrow1p_arrow_r = new int[]{72,72,144,144,216,216,288,288,360,360,432,432,504,504,576,576,648,648,720,720};
 
-	private int [] DrawArrow1p_Carrow_l = new int[]{0,0,80,80,160,160,240,240,320,320,400,400,480,480,560,560,640,640};
-	private int [] DrawArrow1p_Carrow_r = new int[]{80,80,160,160,240,240,320,320,400,400,480,480,560,560,640,640,720,720};
+	static private int [] DrawArrow1p_Carrow_l = new int[]{0,0,80,80,160,160,240,240,320,320,400,400,480,480,560,560,640,640};
+	static private int [] DrawArrow1p_Carrow_r = new int[]{80,80,160,160,240,240,320,320,400,400,480,480,560,560,640,640,720,720};
 
-	private char DrawArrow1p_s1,DrawArrow1p_s3,DrawArrow1p_s5,DrawArrow1p_s7,DrawArrow1p_s9;
-	private int DrawArrow1p_stat1,DrawArrow1p_stat3,DrawArrow1p_stat5,DrawArrow1p_stat7,DrawArrow1p_stat9;
-	private int DrawArrow1p_cur2;
-	private int DrawArrow1p_beat;
+	static private char DrawArrow1p_s1,DrawArrow1p_s3,DrawArrow1p_s5,DrawArrow1p_s7,DrawArrow1p_s9;
+	static private int DrawArrow1p_stat1,DrawArrow1p_stat3,DrawArrow1p_stat5,DrawArrow1p_stat7,DrawArrow1p_stat9;
+	static private int DrawArrow1p_cur2;
+	static private int DrawArrow1p_beat;
 
-	private boolean DrawArrow1p_Crash1, DrawArrow1p_Crash3, DrawArrow1p_Crash5, DrawArrow1p_Crash7, DrawArrow1p_Crash9;
-	private boolean	DrawArrow1p_On1, DrawArrow1p_On3, DrawArrow1p_On5, DrawArrow1p_On7, DrawArrow1p_On9;
-	private RECT DrawArrow1p_pArr1,DrawArrow1p_pArr3,DrawArrow1p_pArr5,DrawArrow1p_pArr7,DrawArrow1p_pArr9;
-	private RECT DrawArrow1p_cArr1,DrawArrow1p_cArr3,DrawArrow1p_cArr5,DrawArrow1p_cArr7,DrawArrow1p_cArr9;
-	void DrawArrow1p(int cur)
+	static private boolean DrawArrow1p_Crash1, DrawArrow1p_Crash3, DrawArrow1p_Crash5, DrawArrow1p_Crash7, DrawArrow1p_Crash9;
+	static private boolean	DrawArrow1p_On1, DrawArrow1p_On3, DrawArrow1p_On5, DrawArrow1p_On7, DrawArrow1p_On9;
+	static private RECT DrawArrow1p_pArr1,DrawArrow1p_pArr3,DrawArrow1p_pArr5,DrawArrow1p_pArr7,DrawArrow1p_pArr9;
+	static private RECT DrawArrow1p_cArr1,DrawArrow1p_cArr3,DrawArrow1p_cArr5,DrawArrow1p_cArr7,DrawArrow1p_cArr9;
+	static private void DrawArrow1p(int cur)
 	{
 		/*
 		static int arrow_l[20]={0,0,72,72,144,144,216,216,288,288,360,360,432,432,504,504,576,576,648,648};
@@ -1879,7 +1879,7 @@ public class Main {
 
 	static RECT DrawArrow2p_pArr1,DrawArrow2p_pArr3,DrawArrow2p_pArr5,DrawArrow2p_pArr7,DrawArrow2p_pArr9;
 	static RECT DrawArrow2p_cArr1,DrawArrow2p_cArr3,DrawArrow2p_cArr5,DrawArrow2p_cArr7,DrawArrow2p_cArr9;
-	void DrawArrow2p(int cur)
+	static private void DrawArrow2p(int cur)
 	{
 		/*
 		static int arrow_l[20]={0,0,72,72,144,144,216,216,288,288,360,360,432,432,504,504,576,576,648,648};
@@ -2670,13 +2670,13 @@ public class Main {
 		else if(DrawArrow2p_s3 != 0)g_pDDSBack.BltFast(547,45,pArrow3,DrawArrow2p_pArr3,DDBLTFAST_WAIT | DDBLTFAST_SRCCOLORKEY);
 	}
 	
-	HRESULT	RestoreAll() { 
+	static private HRESULT	RestoreAll() { 
 		HRESULT	hRet;
 		hRet=g_pDDSPrimary.Restore();
 		return hRet;
 	}
 
-	void Flipp() {
+	static private void Flipp() {
 		HRESULT hRet;
 		
 		while(true)	{
@@ -2699,7 +2699,7 @@ public class Main {
 		}
 	}
 	
-	boolean InitDSound(HWND hWnd, int Samples, int Bits, int nChannels)
+	static private boolean InitDSound(HWND hWnd, int Samples, int Bits, int nChannels)
 	{
 		HRESULT			hRet;
 
@@ -2718,7 +2718,7 @@ public class Main {
 
 	}
 	
-	void ReleaseDSound() {
+	static private void ReleaseDSound() {
 		int i;
 
 		for(i=0;i<512;i++)
@@ -2770,7 +2770,7 @@ public class Main {
 			lpds.Release();
 	}
 
-	void ReleaseAllObjects()
+	static private void ReleaseAllObjects()
 	{
 	    if (g_pDD != null)
 	    {
@@ -2994,8 +2994,8 @@ public class Main {
 	}
 	
 	
-	private long UpdateFrame_lastTime, UpdateFrame_fpsTime,UpdateFrame_framesRendered,UpdateFrame_fps;
-	void UpdateFrame()	{
+	static private long UpdateFrame_lastTime, UpdateFrame_fpsTime,UpdateFrame_framesRendered,UpdateFrame_fps;
+	static private void UpdateFrame()	{
 		// FPS count start
 		// static long lastTime, fpsTime,framesRendered,fps;
 
@@ -3054,7 +3054,7 @@ public class Main {
 
 	}
 	
-	long WindowProc(HWND hWnd, int message, long wParam, long lParam)
+	static private long WindowProc(HWND hWnd, int message, long wParam, long lParam)
 	{
 		switch (message)
 	    {
@@ -3290,7 +3290,7 @@ public class Main {
 		return hRet;
 	}
 
-	HRESULT	InitWin(HINSTANCE hInstance, long Width, long Height, int nCmdShow)
+	static private HRESULT	InitWin(HINSTANCE hInstance, long Width, long Height, int nCmdShow)
 	{
 		WNDCLASS	wc = new WNDCLASS();
 
@@ -3363,7 +3363,7 @@ public class Main {
 
 	}
 	
-	HRESULT InitDD() {
+	static private HRESULT InitDD() {
 		DDSURFACEDESC			ddsd = new DDSURFACEDESC();
 		DDSCAPS					ddscaps = new DDSCAPS();
 
@@ -3448,7 +3448,7 @@ public class Main {
 		return	hRet;
 	}
 	
-	HRESULT KLoadImage()
+	static public HRESULT KLoadImage()
 	{
 		// Loading image here
 		
@@ -3750,7 +3750,7 @@ public class Main {
 		return HRESULT.DD_OK;
 	}
 	
-	int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance, String lpCmdLine,int nCmdShow)
+	static private int WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance, String lpCmdLine,int nCmdShow)
 	{
 	    MSG	msg = MSG.wParam;
 
@@ -3804,7 +3804,7 @@ public class Main {
 
 	}
 
-	HRESULT TransAlphaImproved(
+	static private HRESULT TransAlphaImproved(
 			LPDIRECTDRAWSURFACE src, LPDIRECTDRAWSURFACE dest, int lDestX, int lDestY, RECT srcRect, int ALPHA, long ColorKey, int BPP) {
 		int register, i,j;
 		int height,width;
@@ -4160,20 +4160,20 @@ public class Main {
 
 	
 	
-	private int temp;
-	private int i;
-	private long cur,last,sec;
-	private long starttime, curtime;
-	private ArrayList<RECT> rect1 = new ArrayList<RECT>(7);
-	private ArrayList<RECT> rect3 = new ArrayList<RECT>(7);
-	private ArrayList<RECT> rect5 = new ArrayList<RECT>(7);
-	private ArrayList<RECT> rect7 = new ArrayList<RECT>(7);
-	private ArrayList<RECT> rect9 = new ArrayList<RECT>(7);
-	private int sta;
-	private double tail;
-	private long t;
-	private HRESULT	hr;
-	void KIU_STAGE() {
+	static private int temp;
+	static private int i;
+	static private long cur,last,sec;
+	static private long starttime, curtime;
+	static private ArrayList<RECT> rect1 = new ArrayList<RECT>(7);
+	static private ArrayList<RECT> rect3 = new ArrayList<RECT>(7);
+	static private ArrayList<RECT> rect5 = new ArrayList<RECT>(7);
+	static private ArrayList<RECT> rect7 = new ArrayList<RECT>(7);
+	static private ArrayList<RECT> rect9 = new ArrayList<RECT>(7);
+	static private int sta;
+	static private double tail;
+	static private long t;
+	static private HRESULT	hr;
+	static private void KIU_STAGE() {
 		/*
 		static int temp;
 		static long i;
@@ -5049,217 +5049,217 @@ public class Main {
 			DrawScore2p();
 		}
 
-		if(bModeMirror1p)DrawMode(0,200,SELECT.HMODE_MIRROR);
-		if(bModeNonstep1p)DrawMode(0,240,SELECT.HMODE_NONSTEP);
-		if(bModeSynchro)DrawMode(0,280,SELECT.HMODE_SYNCHRO);
-		if(bModeUnion1p)DrawMode(0,320,SELECT.HMODE_UNION);
-		if(bModeRandom1p)DrawMode(0,360,SELECT.HMODE_RANDOM);
-		if(bModeVanish1p)DrawMode(0,400,SELECT.HMODE_VANISH);
+		if(bModeMirror1p)DrawMode(0,200,KSelect.HMODE_MIRROR);
+		if(bModeNonstep1p)DrawMode(0,240,KSelect.HMODE_NONSTEP);
+		if(bModeSynchro)DrawMode(0,280,KSelect.HMODE_SYNCHRO);
+		if(bModeUnion1p)DrawMode(0,320,KSelect.HMODE_UNION);
+		if(bModeRandom1p)DrawMode(0,360,KSelect.HMODE_RANDOM);
+		if(bModeVanish1p)DrawMode(0,400,KSelect.HMODE_VANISH);
 
-		if(HighSpeed1p>1)DrawMode(0,160,SELECT.HMODE_2X);
+		if(HighSpeed1p>1)DrawMode(0,160,KSelect.HMODE_2X);
 
-		if(bModeMirror2p)DrawMode(600,200,SELECT.HMODE_MIRROR);
-		if(bModeNonstep2p)DrawMode(600,240,SELECT.HMODE_NONSTEP);
-		if(bModeUnion2p)DrawMode(600,320,SELECT.HMODE_UNION);
-		if(bModeRandom2p)DrawMode(600,360,SELECT.HMODE_RANDOM);
-		if(bModeVanish2p)DrawMode(600,400,SELECT.HMODE_VANISH);
+		if(bModeMirror2p)DrawMode(600,200,KSelect.HMODE_MIRROR);
+		if(bModeNonstep2p)DrawMode(600,240,KSelect.HMODE_NONSTEP);
+		if(bModeUnion2p)DrawMode(600,320,KSelect.HMODE_UNION);
+		if(bModeRandom2p)DrawMode(600,360,KSelect.HMODE_RANDOM);
+		if(bModeVanish2p)DrawMode(600,400,KSelect.HMODE_VANISH);
 
-		if(HighSpeed2p>1)DrawMode(600,160,SELECT.HMODE_2X);
+		if(HighSpeed2p>1)DrawMode(600,160,KSelect.HMODE_2X);
 
 		Flipp();
 	}
 	
 	
-	private void DrawMode(int j, int k, int hmodeMirror) {
+	static private void DrawMode(int j, int k, int hmodeMirror) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	private void WaitMessage() {
+	static private void WaitMessage() {
 		// TODO Auto-generated method stub
 
 	}
-	private void DispatchMessage(MSG msg) {
+	static private void DispatchMessage(MSG msg) {
 		// TODO Auto-generated method stub
 
 	}
-	private void TranslateMessage(MSG msg) {
+	static private void TranslateMessage(MSG msg) {
 		// TODO Auto-generated method stub
 
 	}
-	private boolean GetMessage(MSG msg, Object object, int i, int j) {
+	static private boolean GetMessage(MSG msg, Object object, int i, int j) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	private boolean PeekMessage(MSG msg, Object object, int i, int j, int pmNoremove) {
+	static private boolean PeekMessage(MSG msg, Object object, int i, int j, int pmNoremove) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	private void CFGInitialize() {
+	static private void CFGInitialize() {
 		// TODO Auto-generated method stub
 
 	}
-	private HRESULT InitDI(HINSTANCE hInstance) {
+	static private HRESULT InitDI(HINSTANCE hInstance) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private void Read() {
+	static private void Read() {
 		// TODO Auto-generated method stub
 
 	}
-	private void CoInitialize(Object object) {
+	static private void CoInitialize(Object object) {
 		// TODO Auto-generated method stub
 
 	}
-	private long DDColorMatch(LPDIRECTDRAWSURFACE wArrow2, int clrInvalid) {
+	static private long DDColorMatch(LPDIRECTDRAWSURFACE wArrow2, int clrInvalid) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	private LPDIRECTDRAWSURFACE DDLoadBitmap(LPDIRECTDRAW g_pDD2, int idbArrow1, int i, int j) {
+	static private LPDIRECTDRAWSURFACE DDLoadBitmap(LPDIRECTDRAW g_pDD2, int idbArrow1, int i, int j) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private void MessageBox(HWND hWnd2, String format, int i, int mbOk) {
+	static private void MessageBox(HWND hWnd2, String format, int i, int mbOk) {
 		// TODO Auto-generated method stub
 
 	}
-	private void DDSetColorKey(LPDIRECTDRAWSURFACE smallFont2, int clrInvalid) {
+	static private void DDSetColorKey(LPDIRECTDRAWSURFACE smallFont2, int clrInvalid) {
 		// TODO Auto-generated method stub
 
 	}
-	private LPDIRECTDRAWSURFACE DDLoadBitmap(LPDIRECTDRAW g_pDD2, String string, int i, int j) {
+	static private LPDIRECTDRAWSURFACE DDLoadBitmap(LPDIRECTDRAW g_pDD2, String string, int i, int j) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private HRESULT DirectDrawCreate(Object object, LPDIRECTDRAW g_pDD2, Object object2) {
+	static private HRESULT DirectDrawCreate(Object object, LPDIRECTDRAW g_pDD2, Object object2) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private void SetFocus(HWND hWnd2) {
+	static private void SetFocus(HWND hWnd2) {
 		// TODO Auto-generated method stub
 
 	}
-	private void UpdateWindow(HWND hWnd2) {
+	static private void UpdateWindow(HWND hWnd2) {
 		// TODO Auto-generated method stub
 
 	}
-	private void ShowWindow(HWND hWnd2, int nCmdShow) {
+	static private void ShowWindow(HWND hWnd2, int nCmdShow) {
 		// TODO Auto-generated method stub
 
 	}
-	private HWND CreateWindowEx(long dwExStyle, String pRGNAME2, String tITLE2, long dwStyle, int i, int j, long l,
+	static private HWND CreateWindowEx(long dwExStyle, String pRGNAME2, String tITLE2, long dwStyle, int i, int j, long l,
 			long m, Object object, Object object2, HINSTANCE hInstance, Object object3) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private void AdjustWindowRectEx(RECT windowRect, long dwStyle, boolean b, long dwExStyle) {
+	static private void AdjustWindowRectEx(RECT windowRect, long dwStyle, boolean b, long dwExStyle) {
 		// TODO Auto-generated method stub
 
 	}
-	private void ShowCursor(boolean b) {
+	static private void ShowCursor(boolean b) {
 		// TODO Auto-generated method stub
 
 	}
-	private void RegisterClass(WNDCLASS wc) {
+	static private void RegisterClass(WNDCLASS wc) {
 		// TODO Auto-generated method stub
 
 	}
 	// TODO : NEXT
 
-	private Object LoadCursor(Object object, int idcArrow) {
+	static private Object LoadCursor(Object object, int idcArrow) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private Object LoadIcon(int i, int idiIcon) {
+	static private Object LoadIcon(int i, int idiIcon) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private long DefWindowProc(HWND hWnd2, int message, long wParam, long lParam) {
+	static private long DefWindowProc(HWND hWnd2, int message, long wParam, long lParam) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	private void SetCursor(Object object) {
+	static private void SetCursor(Object object) {
 		// TODO Auto-generated method stub
 
 	}
-	private void PostQuitMessage(int i) {
+	static private void PostQuitMessage(int i) {
 		// TODO Auto-generated method stub
 
 	}
-	private void CFGWrite() {
+	static private void CFGWrite() {
 		// TODO Auto-generated method stub
 
 	}
-	private void ClientToScreen(HWND hWnd2, long left) {
+	static private void ClientToScreen(HWND hWnd2, long left) {
 		// TODO Auto-generated method stub
 
 	}
-	private void GetClientRect(HWND hWnd2, RECT g_rcViewport2) {
+	static private void GetClientRect(HWND hWnd2, RECT g_rcViewport2) {
 		// TODO Auto-generated method stub
 
 	}
-	private void GetVersionEx(OSVERSIONINFO osver) {
+	static private void GetVersionEx(OSVERSIONINFO osver) {
 		// TODO Auto-generated method stub
 
 	}
-	private void DestroyWindow(HWND hWnd2) {
+	static private void DestroyWindow(HWND hWnd2) {
 		// TODO Auto-generated method stub
 
 	}
-	private void MessageBox(HWND hWnd2, String format, String tITLE2, int mbOk) {
+	static private void MessageBox(HWND hWnd2, String format, String tITLE2, int mbOk) {
 		// TODO Auto-generated method stub
 
 	}
-	private void PostMessage(HWND hWnd2, int wmClose, int i, int j) {
-		// TODO Auto-generated method stub
-
-	}
-
-	private void Result() {
-		// TODO Auto-generated method stub
-
-	}
-	private void Configuration() {
-		// TODO Auto-generated method stub
-
-	}
-	private void Dead() {
-		// TODO Auto-generated method stub
-
-	}
-	private void KIU_STAGE_DOUBLE() {
-		// TODO Auto-generated method stub
-
-	}
-	private void SelectSong() {
+	static private void PostMessage(HWND hWnd2, int wmClose, int i, int j) {
 		// TODO Auto-generated method stub
 
 	}
 
-
-	private void CleanupInput() {
+	static private void Result() {
 		// TODO Auto-generated method stub
 
 	}
-	private HRESULT InitFail(HWND hWnd2, HRESULT hRet, String string) {
+	static private void Configuration() {
+		// TODO Auto-generated method stub
+
+	}
+	static private void Dead() {
+		// TODO Auto-generated method stub
+
+	}
+	static private void KIU_STAGE_DOUBLE() {
+		// TODO Auto-generated method stub
+
+	}
+	static private void SelectSong() {
+		// TODO Auto-generated method stub
+
+	}
+
+
+	static private void CleanupInput() {
+		// TODO Auto-generated method stub
+
+	}
+	static private HRESULT InitFail(HWND hWnd2, HRESULT hRet, String string) {
 		// TODO Auto-generated method stub
 		return HRESULT.DD_OK;
 
 	}
-	private HRESULT DirectSoundCreate(Object object, LPDIRECTSOUND lpds2, Object object2) {
+	static private HRESULT DirectSoundCreate(Object object, LPDIRECTSOUND lpds2, Object object2) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private void ReadGameInput() {
+	static private void ReadGameInput() {
 		// TODO Auto-generated method stub
 
 	}
 
-	private LPDIRECTSOUNDBUFFER DSLoadSoundBuffer(LPDIRECTSOUND lpds2, String string) {
+	static private LPDIRECTSOUNDBUFFER DSLoadSoundBuffer(LPDIRECTSOUND lpds2, String string) {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	private long timeGetTime() {
+	static private long timeGetTime() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
