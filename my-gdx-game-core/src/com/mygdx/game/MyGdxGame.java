@@ -127,6 +127,11 @@ public class MyGdxGame extends ApplicationAdapter {
 		Gdx.input.setInputProcessor(inputProcessor);
 		
 		kloadImage();
+		readSongs();
+	}
+
+	// C void Read()
+	private void readSongs() {
 	}
 
 	@Override
